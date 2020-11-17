@@ -27,14 +27,14 @@ function App() {
     const countryCode = event.target.value;
 
     const url =
-      countryCode === "name"
+      companyCode === "name"
         ? `https://financialmodelingprep.com/api/v3/quotes/index?apikey=${API_KEY}`
         : `https://financialmodelingprep.com/api/v3/quotes/index?apikey=${API_KEY}`;
 
     await fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setCompany(countryCode);
+        setCompany(companyCode);
         setCompanyInfo(data);
       });
   };
